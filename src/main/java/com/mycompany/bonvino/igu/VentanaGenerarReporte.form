@@ -150,7 +150,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="solicitarFechaHasta">
               <Properties>
-                <Property name="text" type="java.lang.String" value="dd/mm/aaaa"/>
+                <Property name="text" type="java.lang.String" value="dd/MM/yyyy"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="solicitarFechaHastaActionPerformed"/>
@@ -163,7 +163,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="solicitarFechaDesde">
               <Properties>
-                <Property name="text" type="java.lang.String" value="dd/mm/aaaa"/>
+                <Property name="text" type="java.lang.String" value="dd/MM/yyyy"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="solicitarFechaDesdeActionPerformed"/>
@@ -202,8 +202,13 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;CONFIRMAR&quot;" type="code"/>
+                </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="solicitarConfirmacion.addActionListener(new java.awt.event.ActionListener() {&#xa;            public void actionPerformed(java.awt.event.ActionEvent evt) {&#xa;                solicitarConfirmacionActionPerformed(evt);&#xa;            }&#xa;        });"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
