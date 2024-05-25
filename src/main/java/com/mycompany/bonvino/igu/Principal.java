@@ -1,21 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.bonvino.igu;
 
-/**
- *
- * @author Usuario
- */
-public class Principal extends javax.swing.JFrame {
+import com.mycompany.bonvino.logica.ControladorPrincipal;
 
+public class Principal extends javax.swing.JFrame {
+    
+    private ControladorPrincipal controladorPrincipal;
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
+        controladorPrincipal = new ControladorPrincipal(this);
+        this.controladorPrincipal = new ControladorPrincipal(this);
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,13 +27,13 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnCatalogo = new javax.swing.JButton();
+        btnCalificaciones = new javax.swing.JButton();
+        btnRegiones = new javax.swing.JButton();
+        btnBodegas = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        opcGenerarReporte = new javax.swing.JButton();
+        btnUsuario = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -64,65 +63,65 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoMenu.png")); // NOI18N
         jLabel1.setText("                          MENU");
 
-        jButton1.setBackground(new java.awt.Color(185, 109, 58));
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBotellaCatalogo.png")); // NOI18N
-        jButton1.setText(" Catalogo");
+        btnCatalogo.setBackground(new java.awt.Color(185, 109, 58));
+        btnCatalogo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnCatalogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBotellaCatalogo.png")); // NOI18N
+        btnCatalogo.setText(" Catalogo");
 
-        jButton2.setBackground(new java.awt.Color(185, 109, 58));
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoCalificaciones.png")); // NOI18N
-        jButton2.setText(" Calificaciones");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCalificaciones.setBackground(new java.awt.Color(185, 109, 58));
+        btnCalificaciones.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnCalificaciones.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoCalificaciones.png")); // NOI18N
+        btnCalificaciones.setText(" Calificaciones");
+        btnCalificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCalificacionesActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(185, 109, 58));
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoRegion.png")); // NOI18N
-        jButton3.setText(" Regiones");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnRegiones.setBackground(new java.awt.Color(185, 109, 58));
+        btnRegiones.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnRegiones.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoRegion.png")); // NOI18N
+        btnRegiones.setText(" Regiones");
+        btnRegiones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnRegionesActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(185, 109, 58));
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBodega.png")); // NOI18N
-        jButton4.setText(" Bodegas");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBodegas.setBackground(new java.awt.Color(185, 109, 58));
+        btnBodegas.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnBodegas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBodega.png")); // NOI18N
+        btnBodegas.setText(" Bodegas");
+        btnBodegas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBodegasActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(185, 109, 58));
-        jButton5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBuscar.png")); // NOI18N
-        jButton5.setText(" Buscar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setBackground(new java.awt.Color(185, 109, 58));
+        btnBuscar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoBuscar.png")); // NOI18N
+        btnBuscar.setText(" Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(185, 109, 58));
-        jButton6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoRanking.png")); // NOI18N
-        jButton6.setText("Generar Ranking");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        opcGenerarReporte.setBackground(new java.awt.Color(185, 109, 58));
+        opcGenerarReporte.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        opcGenerarReporte.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoRanking.png")); // NOI18N
+        opcGenerarReporte.setText("Generar Reporte");
+        opcGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                opcGenerarReporteActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(185, 109, 58));
-        jButton7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoUsuario.png")); // NOI18N
-        jButton7.setText(" Usuario");
+        btnUsuario.setBackground(new java.awt.Color(185, 109, 58));
+        btnUsuario.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnUsuario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoUsuario.png")); // NOI18N
+        btnUsuario.setText(" Usuario");
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\iconosBonvino\\iconoContactanos.png")); // NOI18N
         jLabel2.setText("Contáctanos");
@@ -134,13 +133,13 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(opcGenerarReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBodegas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegiones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCalificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(25, 25, 25))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -155,19 +154,19 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addComponent(jButton1)
+                .addComponent(btnCatalogo)
                 .addGap(8, 8, 8)
-                .addComponent(jButton2)
+                .addComponent(btnCalificaciones)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnRegiones)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(btnBodegas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
+                .addComponent(btnBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
+                .addComponent(opcGenerarReporte)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(btnUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addComponent(jLabel2))
         );
@@ -360,35 +359,43 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnRegionesActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }                                        
+    }                                           
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                        
+    }                                         
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void opcGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        abrirVentanaGenerarReporte();
+    }                                                 
+    public void abrirVentanaGenerarReporte() {
+        // Crear una instancia de VentanaGenerarReporte y pasar el controlador
+        VentanaGenerarReporte ventanaGenerarReporte = new VentanaGenerarReporte(controladorPrincipal);
+        
+        // Hacer visible la ventana
+        ventanaGenerarReporte.setVisible(true);
+}
+    private void btnBodegasActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }                                        
+    }                                          
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnCalificacionesActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }                                        
+    }                                                 
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-
-    /**
-     * @param args the command line arguments
-     */
+    
+     /* @param args the command line arguments*/
+         
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -408,21 +415,21 @@ public class Principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
             }
         });
     }
-
+  
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnBodegas;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCalificaciones;
+    private javax.swing.JButton btnCatalogo;
+    private javax.swing.JButton btnRegiones;
+    private javax.swing.JButton btnUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -447,5 +454,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton opcGenerarReporte;
     // End of variables declaration                   
 }
