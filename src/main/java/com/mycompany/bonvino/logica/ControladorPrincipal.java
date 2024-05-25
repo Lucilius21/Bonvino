@@ -1,4 +1,3 @@
-/*
 package com.mycompany.bonvino.logica;
 
 import com.mycompany.bonvino.igu.Principal;
@@ -11,4 +10,3 @@ public class ControladorPrincipal {
     princ.setLocationRelativeTo(null);
     }
 }
-*/
