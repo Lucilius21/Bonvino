@@ -1,4 +1,5 @@
 
+
 package com.mycompany.bonvino.logica;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -39,5 +40,8 @@ public class Reseña {
 
     int getIdVino() {
         return this.idVino;
+    }
+    int getPuntaje(){
+        return this.puntaje;
     }
 }
