@@ -80,4 +80,47 @@ public class Vino {
     int getId() {
         return this.idVino;
     }
-}
+
+    List<String> buscarVarietal() {
+        List<String> varietalInfo = new ArrayList<>();
+        try {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Varietal [ ] varietalArray = objectMapper.readValue(new File("varietal.json"), Varietal[ ].class);
+        for (Varietal varietal : varietalArray){
+            if (this.idVino == varietal.getId()){
+                varietalInfo.add(varietal.getDescripcion());
+        }
+        }
+        }catch(IOException e){
+        e.printStackTrace();
+        }
+    }
+
+    int calcularPuntajeSommelierEnPeriodo(String fechaDesde, String fechaHasta) {
+        try {
+        int puntaje = 0;
+        int contador = 0;
+        ObjectMapper objectMapper = new ObjectMapper();
+        Reseña [ ] resenaArray = objectMapper.readValue(new File("reseñas.json"), Reseña[ ].class);
+        for (Reseña resena : resenaArray){
+        //aca llamo a Reseña y le pregunto cosas
+            if (resena.sosDePeriodo(fechaDesde, fechaHasta) && resena.esPremium() && resena.getIdVino() == this.idVino) {
+                puntaje += resena.getPuntaje();
+                contador++;
+        }}
+        int promedio = calcularPromedio(puntaje, contador);
+        return promedio;
+        }catch(IOException e){
+        e.printStackTrace();
+        }
+    }
+ 
+
+    private int calcularPromedio(int puntaje, int contador) {
+        int promedio = 0;
+        if (contador != 0){
+            promedio = puntaje / contador;
+        }
+    return Math.round(promedio);
+    }}
+
