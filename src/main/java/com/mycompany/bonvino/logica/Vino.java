@@ -94,9 +94,11 @@ public class Vino {
         }catch(IOException e){
         e.printStackTrace();
         }
+        return null;
     }
 
     int calcularPuntajeSommelierEnPeriodo(String fechaDesde, String fechaHasta) {
+        int promedio = 0;
         try {
         int puntaje = 0;
         int contador = 0;
@@ -108,11 +110,12 @@ public class Vino {
                 puntaje += resena.getPuntaje();
                 contador++;
         }}
-        int promedio = calcularPromedio(puntaje, contador);
+        promedio = calcularPromedio(puntaje, contador);
         return promedio;
         }catch(IOException e){
         e.printStackTrace();
         }
+        return promedio;
     }
  
 
@@ -122,5 +125,22 @@ public class Vino {
             promedio = puntaje / contador;
         }
     return Math.round(promedio);
-    }}
+    }
+
+    int getAnada() {
+        return this.anada;
+    }
+
+    String getImagen() {
+        return this.imagenEtiqueta;
+    }
+
+    String getNota() {
+        return this.notaDeCataBodega;
+    }
+
+    int getIdBodega() {
+        return this.idBodega;
+    }
+}
 
