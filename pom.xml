@@ -22,7 +22,7 @@
         </resource>
     </resources>
 </build>
-<!-- Para poder usar json-->
+<!-- Para poder usar json -->
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -34,5 +34,17 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.17.0</version>
         </dependency>
+        <!-- Para manejar el excel -->
+        <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.5</version>
+    </dependency>
+    <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.5</version>
+</dependency>
     </dependencies>
 </project>
+
