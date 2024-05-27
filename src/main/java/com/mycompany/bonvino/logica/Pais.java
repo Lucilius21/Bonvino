@@ -1,11 +1,16 @@
 
 package com.mycompany.bonvino.logica;
 
-public class Pais {
-    String nombre;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    public Pais(String nombre) {
-        this.nombre = nombre;
+public class Pais {
+    String nombrePais;
+
+    public Pais(@JsonProperty("nombrePais") String nombrePais) {
+        this.nombrePais = nombrePais;
+    }
+
+    String getNombre() {
+        return this.nombrePais;
     }
 }
-
