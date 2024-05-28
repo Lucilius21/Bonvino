@@ -1,27 +1,5 @@
-/*package com.mycompany.bonvino.logica;
-
-import com.mycompany.bonvino.igu.Principal;
-
-
-public class ControladorPrincipal {
-    public static void main(String[] args){
-    Principal princ = new Principal();
-    princ.setVisible(true);
-    princ.setLocationRelativeTo(null);
-    }
-
-    // Método para tomar las fechas desde la ventanaGenerarReporte
-    public void tomarFechas(String fechaDesde, String fechaHasta) {
-        // Aquí puedes realizar las operaciones necesarias con las fechas obtenidas
-        System.out.println("Fecha desde: " + fechaDesde);
-        System.out.println("Fecha hasta: " + fechaHasta);
-    }
-
-} POR SI SE ROMPE FEROZMENTE
-*/
-
 package com.mycompany.bonvino.logica;
-
+import com.mycompany.bonvino.igu.InterfazExcel;
 import com.mycompany.bonvino.igu.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -140,13 +118,13 @@ public class ControladorPrincipal {
             workbook.close();
 
             System.out.println("El archivo Excel se ha generado correctamente.");
+            // Abrir la ventana InterfazExcel
+            InterfazExcel interfazExcel = new InterfazExcel();
+            interfazExcel.setVisible(true);
+
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-    }
-}
-
-
