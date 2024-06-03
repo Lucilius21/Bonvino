@@ -10,30 +10,88 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Vino {
-    int idVino;
     int anada;
     String imagenEtiqueta;
     String nombre;
     String notaDeCataBodega;
-    float precioARS;
-    int idBodega; //Identificador de bodega para el json bodega
+    int precioARS;
+    List<Reseña> resena;
+    List<Varietal> varietal;
+    Bodega bodega;
 
-    public Vino(@JsonProperty("id") int idVino,
+    public Vino(
             @JsonProperty("anada") int anada,
-            @JsonProperty("nombre") String nombre,
             @JsonProperty("imagenEtiqueta") String imagenEtiqueta,
+            @JsonProperty("nombre") String nombre,
             @JsonProperty("notaDeCataBodega") String notaDeCataBodega,
-            @JsonProperty("precioARS") float precioARS,
-            @JsonProperty("idBodega") int idBodega){
+            @JsonProperty("precioARS") int precioARS,
+            @JsonProperty("resena") List<Reseña> resena,
+            @JsonProperty("varietal") List<Varietal> varietal,
+            @JsonProperty("bodega") Bodega bodega
+            ){
         this.anada = anada;
         this.imagenEtiqueta = imagenEtiqueta;
-        this.notaDeCataBodega = notaDeCataBodega;
         this.nombre = nombre;
+        this.notaDeCataBodega = notaDeCataBodega;
         this.precioARS = precioARS;
-        this.idBodega = idBodega;
-        this.idVino = idVino;
+        this.resena = resena;
+        this.varietal = varietal;
+        this.bodega = bodega;
     }
 
+    String getNombre() {
+        return this.nombre;
+    }
+
+    boolean tomarResenaSommelierEnPeriodo(String fechaDesde, String fechaHasta) {
+        List<Reseña> resenaArray = this.resena;
+        for (Reseña resena : resenaArray) {
+            return resena.esDelPeriodo(fechaDesde, fechaHasta) && resena.esPremium();
+                }
+        return false;
+    }
+
+    int getPrecio() {
+        return this.precioARS;
+    }
+
+    List<String> buscarInformacionBodega() {
+        List<String> infoBodega = new ArrayList();
+        String nombreBodega = this.bodega.getNombre();
+        List<String> infoUbicacion = this.bodega.getRegionYPais();
+        infoBodega.add(nombreBodega);
+        for (String e : infoUbicacion){
+            infoBodega.add(e);}
+        return infoBodega;
+    }
+
+    List<String> buscarVarietal() {
+        List<Varietal> varietalDescripcion = this.varietal;
+        List<String> descripcion = new ArrayList();
+        for (Varietal varietal : varietalDescripcion) {
+            descripcion.add(varietal.getDescripcion());}
+        return descripcion;
+    }
+
+    float calcularPuntajeSommelierEnPeriodo(String fechaDesde, String fechaHasta) {
+        List<Reseña> resenaArray = this.resena;
+        int suma = 0;
+        int cuenta = 0;
+        for (Reseña resena : resenaArray) {
+            if (resena.esPremium() && resena.esDelPeriodo(fechaDesde, fechaHasta)){
+                suma += resena.getPuntaje();
+                cuenta++;}}
+        return calcularPromedio(suma, cuenta);
+    }
+
+    private float calcularPromedio(int suma, int cuenta) {
+        float promedio = -1;
+        if (cuenta != 0){
+            promedio = (float) suma/(float) cuenta;}
+        return promedio;
+    }
+}
+/*
     public Reseña TomarReseña(String fechaDesde, String fechaHasta) {
         try{
         ObjectMapper objectMapper = new ObjectMapper();
@@ -144,3 +202,4 @@ public class Vino {
     }
 }
 
+*/

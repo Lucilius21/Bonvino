@@ -11,21 +11,19 @@ public class Reseña {
     Boolean esPremium;
     String fechaResena;
     int puntaje;
-    int idVino;
 
-    public Reseña(@JsonProperty("idVino") int idVino, 
-            @JsonProperty("comentario") String comentario, 
+    public Reseña(@JsonProperty("comentario") String comentario, 
             @JsonProperty("esPremium") Boolean esPremium, 
-            @JsonProperty("fechaReseña") String fechaResena, 
-            @JsonProperty("puntaje") int puntaje) {
+            @JsonProperty("fechaResena") String fechaResena, 
+            @JsonProperty("puntaje") int puntaje
+            ) {
         this.comentario = comentario;
         this.esPremium = esPremium;
         this.fechaResena = fechaResena;
         this.puntaje = puntaje;
-        this.idVino = idVino;
     }
 
-    public boolean sosDePeriodo(String fechaDesde, String fechaHasta) {
+    public boolean esDelPeriodo(String fechaDesde, String fechaHasta) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate desde = LocalDate.parse(fechaDesde, formatter);
         LocalDate hasta = LocalDate.parse(fechaHasta, formatter);
@@ -37,10 +35,7 @@ public class Reseña {
     public boolean esPremium() {
              return esPremium;
     }
-
-    int getIdVino() {
-        return this.idVino;
-    }
+    
     int getPuntaje(){
         return this.puntaje;
     }

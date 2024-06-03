@@ -10,42 +10,22 @@ import java.util.logging.Logger;
 
 public class RegionVitivinicola extends Provincia {
     String descripcion;
-    String nombre;
-    int idRegion;
+    String nombreRegion;
 
-    public RegionVitivinicola(@JsonProperty("idRegion") int idRegion, 
-            @JsonProperty("nombre") String nombre, 
+    public RegionVitivinicola(@JsonProperty("nombreRegion") String nombreRegion, 
             @JsonProperty("descripcion") String descripcion, 
             @JsonProperty("nombreProvincia") String nombreProvincia, 
             @JsonProperty("nombrePais") String nombrePais) {
         super(nombreProvincia, nombrePais);
         this.descripcion = descripcion;
-        this.nombre = nombre;
-        this.idRegion = idRegion;
-    }
-
-    public int getIdRegion() {
-        return idRegion;
+        this.nombreRegion = nombreRegion;
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreRegion;
     }
 
-    public String getPais() {
-        String nombrePais;
-        nombrePais = "";
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            Provincia [ ] provinciaArray = objectMapper.readValue(new File("provincias.json"), Provincia[ ].class);
-            for (Provincia provincia : provinciaArray){
-                if (provincia.getNombre().equals(this.nombreProvincia)){
-                    nombrePais = provincia.getPais(this.nombreProvincia);
-                }
-            }
-        
-        } catch (IOException ex) {
-            Logger.getLogger(Vino.class.getName()).log(Level.SEVERE, null, ex);
+    String getPais() {
+        return super.getPais();
     }
-    return nombrePais;
-}}
+}

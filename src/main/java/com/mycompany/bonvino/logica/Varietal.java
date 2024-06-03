@@ -1,18 +1,15 @@
 package com.mycompany.bonvino.logica;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Varietal {
-    int id;
     String descripcion;
     int porcentajeComposicion;
 
-    public Varietal(int id, String descripcion, int porcentajeComposicion) {
-        this.id = id;
+    public Varietal(@JsonProperty("descripcion") String descripcion, 
+            @JsonProperty("porcentajeComposicion") int porcentajeComposicion) {
         this.descripcion = descripcion;
         this.porcentajeComposicion = porcentajeComposicion;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getDescripcion() {
@@ -21,10 +18,6 @@ public class Varietal {
 
     public int getPorcentajeComposicion() {
         return porcentajeComposicion;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setDescripcion(String descripcion) {

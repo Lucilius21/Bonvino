@@ -21,19 +21,7 @@ public class Provincia extends Pais {
        return nombreProvincia;
     }
 
-    public String getPais(String nom) {
-        String nomPais;
-        nomPais = "";
-        try{
-            ObjectMapper objectMapper = new ObjectMapper();
-            Pais [ ] paisArray = objectMapper.readValue(new File("paises.json"), Pais[ ].class);
-            for (Pais pais : paisArray){
-                if (this.nombrePais.equals(pais.getNombre())) {
-                   nomPais = pais.getNombre();
-                }
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Vino.class.getName()).log(Level.SEVERE, null, ex);
+    String getPais() {
+        return super.getNombre();
     }
-        return nomPais;
-    }}
+}

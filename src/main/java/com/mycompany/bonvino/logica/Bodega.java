@@ -11,51 +11,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Bodega {
-    int coordenadasUbicacion;
+    float[] coordenadasUbicacion;
     String descripcion;
     String historia;
     String nombre;
     String periodoActualizacion;
-    int idBodega;
-    int idRegion;
+    RegionVitivinicola region;
 
-    public Bodega(@JsonProperty("idRegion") int idRegion, 
-            @JsonProperty("idBodega") int idBodega, 
-            @JsonProperty("coordenadasUbicacion") int coordenadasUbicacion, 
+    public Bodega(@JsonProperty("coordenadasUbicacion") float[] coordenadasUbicacion, 
             @JsonProperty("nombre") String nombre, 
             @JsonProperty("descripcion") String descripcion, 
             @JsonProperty("historia") String historia, 
-            @JsonProperty("periodoActualizacion") String periodoActualizacion) {
-        this.idBodega = idBodega;
+            @JsonProperty("periodoActualizacion") String periodoActualizacion,
+            @JsonProperty("region") RegionVitivinicola region) {
         this.coordenadasUbicacion = coordenadasUbicacion;
         this.descripcion = descripcion;
         this.historia = historia;
         this.nombre = nombre;
         this.periodoActualizacion = periodoActualizacion;
-        this.idRegion = idRegion;
-    }
-
-    public int getIdBodega() {
-        return idBodega;
+        this.region = region;
     }
 
     public String getNombre() {
        return nombre;
     }
 
-    public List<String> getRegionYPais() {
-        List<String> regionInfo = new ArrayList<>(); 
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            RegionVitivinicola [ ] regionArray = objectMapper.readValue(new File("regiones.json"), RegionVitivinicola[ ].class);
-            for (RegionVitivinicola region : regionArray){
-                if (region.getIdRegion() == this.idRegion){
-                    regionInfo.add(region.getNombre());
-                    regionInfo.add(region.getPais());
-                }
-            }
-            
-        } catch (IOException ex) {
-            Logger.getLogger(Vino.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       return regionInfo;}}
+    List<String> getRegionYPais() {
+        List<String> infoRegionYPais = new ArrayList();
+        String nombreRegion = this.region.getNombre();
+        String nombrePais = this.region.getPais();
+        infoRegionYPais.add(nombreRegion);
+        infoRegionYPais.add(nombrePais);
+        return infoRegionYPais;
+    }
+}
