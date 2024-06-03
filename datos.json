@@ -1,0 +1,80 @@
+[
+  {
+    "anada": 2018,
+    "imagenEtiqueta": "https://ejemplo.com/imagen-vino.jpg",
+    "nombre": "Malbec Reserva",
+    "notaDeCataBodega": "Color rojo violáceo profundo con aromas a frutos rojos maduros, especias y notas de vainilla. En boca es equilibrado, con taninos suaves y un final persistente.",
+    "precioARS": 1250,
+    "resena": [
+      {
+        "comentario": "Un Malbec excepcional, con aromas complejos y un sabor intenso. Lo recomiendo ampliamente.",
+        "esPremium": true,
+        "fechaResena": "29/05/2024",
+        "puntaje": 5
+      },
+      {
+        "comentario": "Un vino bueno, pero no me pareció tan especial como otros Malbec que he probado.",
+        "esPremium": true,
+        "fechaResena": "28/05/2024",
+        "puntaje": 4
+      }
+    ],
+    "varietal": [
+      {
+        "descripcion": "Malbec",
+        "porcentajeComposicion": 100
+      }
+    ],
+    "bodega": {
+      "coordenadasUbicacion": [-33.769, -66.089],
+      "descripcion": "Bodega familiar con tradición en la elaboración de vinos de alta calidad.",
+      "historia": "Fundada en 1950, la bodega ha pasado de generación en generación, manteniendo siempre la pasión por el vino.",
+      "nombre": "Viñedos Los Robles",
+      "periodoActualizacion": "29/05/2024",
+      "region": {
+        "descripcion": "Una de las regiones vitivinícolas más importantes de Argentina, conocida por sus vinos Malbec.",
+        "nombreRegion": "Mendoza",
+        "nombreProvincia": "Mendoza", 
+        "nombrePais": "Argentina"
+      }
+    }
+  },
+  {
+    "anada": 2017,
+    "imagenEtiqueta": "https://ejemplo.com/imagen-vino2.jpg",
+    "nombre": "Cabernet Sauvignon Gran Reserva",
+    "notaDeCataBodega": "Color rojo oscuro intenso con aromas a frutos negros, especias y notas de cuero. En boca es estructurado, con taninos firmes y un final largo.",
+    "precioARS": 2500,
+    "resena": [
+      {
+        "comentario": "Un Cabernet Sauvignon excepcional, uno de los mejores que he probado.",
+        "esPremium": true,
+        "fechaResena": "27/05/2024",
+        "puntaje": 5
+      }
+    ],
+    "varietal": [
+      {
+        "descripcion": "Cabernet Sauvignon",
+        "porcentajeComposicion": 80
+      },
+      {
+        "descripcion": "Malbec",
+        "porcentajeComposicion": 20
+      }
+    ],
+    "bodega": {
+      "coordenadasUbicacion": [-33.833, -66.167],
+      "descripcion": "Bodega boutique con una filosofía de elaboración artesanal.",
+      "historia": "Fundada en 2010, la bodega busca expresar la personalidad única del terroir de Mendoza.",
+      "nombre": "Viñedos del Valle",
+      "periodoActualizacion": "29/05/2024",
+      "region": {
+        "descripcion": "Una de las regiones vitivinícolas más prestigiosas del mundo, conocida por sus vinos de alta gama.",
+        "nombreRegion": "Valle de Uco",
+        "nombreProvincia": "Mendoza", 
+        "nombrePais": "Argentina" 
+      }
+    }
+  }
+]
