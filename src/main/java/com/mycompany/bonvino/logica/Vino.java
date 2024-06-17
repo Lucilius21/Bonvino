@@ -39,7 +39,7 @@ public class Vino {
         this.bodega = bodega;
     }
 
-    String getNombre() {
+    public String getNombre() {
         return this.nombre;
     }
 
@@ -51,8 +51,20 @@ public class Vino {
         return false;
     }
 
-    int getPrecio() {
+    public int getPrecio() {
         return this.precioARS;
+    }
+    
+    public int getAnada() {
+        return this.anada;
+    }
+    
+    public String getImagen() {
+        return this.imagenEtiqueta;
+    }
+    
+    public String getNota() {
+        return this.notaDeCataBodega;
     }
 
     List<String> buscarInformacionBodega() {
@@ -91,115 +103,3 @@ public class Vino {
         return promedio;
     }
 }
-/*
-    public Reseña TomarReseña(String fechaDesde, String fechaHasta) {
-        try{
-        ObjectMapper objectMapper = new ObjectMapper();
-        Reseña [ ] resenaArray = objectMapper.readValue(new File("reseñas.json"), Reseña[ ].class);
-        for (Reseña resena : resenaArray){
-        //aca llamo a Reseña y le pregunto cosas
-            if (resena.sosDePeriodo(fechaDesde, fechaHasta) && resena.esPremium() && resena.getIdVino() == this.idVino) {
-                return resena;
-            }
-        }
-        } catch(IOException e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-    public float getPrecio(){
-        return precioARS;
-    }
-
- public List<String> buscarInformacionBodega() { 
-      List<String> bodegaInfo = new ArrayList<>();   
-     try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            Bodega [ ] bodegaArray = objectMapper.readValue(new File("bodegas.json"), Bodega[ ].class);
-            for (Bodega bodega : bodegaArray){
-                if (bodega.getIdBodega() == this.idBodega){
-                    bodegaInfo.add(bodega.getNombre());
-                    List<String> regionPais = bodega.getRegionYPais();
-                    bodegaInfo.add(regionPais.get(0));
-                    bodegaInfo.add(regionPais.get(1));
-                }  
-            }
-           
-        } catch (IOException ex) {
-            Logger.getLogger(Vino.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         return bodegaInfo;
- }
-
-    int getId() {
-        return this.idVino;
-    }
-
-    List<String> buscarVarietal() {
-        List<String> varietalInfo = new ArrayList<>();
-        try {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Varietal [ ] varietalArray = objectMapper.readValue(new File("varietal.json"), Varietal[ ].class);
-        for (Varietal varietal : varietalArray){
-            if (this.idVino == varietal.getId()){
-                varietalInfo.add(varietal.getDescripcion());
-        }
-        }
-        }catch(IOException e){
-        e.printStackTrace();
-        }
-        return null;
-    }
-
-    int calcularPuntajeSommelierEnPeriodo(String fechaDesde, String fechaHasta) {
-        int promedio = 0;
-        try {
-        int puntaje = 0;
-        int contador = 0;
-        ObjectMapper objectMapper = new ObjectMapper();
-        Reseña [ ] resenaArray = objectMapper.readValue(new File("reseñas.json"), Reseña[ ].class);
-        for (Reseña resena : resenaArray){
-        //aca llamo a Reseña y le pregunto cosas
-            if (resena.sosDePeriodo(fechaDesde, fechaHasta) && resena.esPremium() && resena.getIdVino() == this.idVino) {
-                puntaje += resena.getPuntaje();
-                contador++;
-        }}
-        promedio = calcularPromedio(puntaje, contador);
-        return promedio;
-        }catch(IOException e){
-        e.printStackTrace();
-        }
-        return promedio;
-    }
- 
-
-    private int calcularPromedio(int puntaje, int contador) {
-        int promedio = 0;
-        if (contador != 0){
-            promedio = puntaje / contador;
-        }
-    return Math.round(promedio);
-    }
-
-    int getAnada() {
-        return this.anada;
-    }
-
-    String getImagen() {
-        return this.imagenEtiqueta;
-    }
-
-    String getNota() {
-        return this.notaDeCataBodega;
-    }
-
-    int getIdBodega() {
-        return this.idBodega;
-    }
-}
-
-*/
