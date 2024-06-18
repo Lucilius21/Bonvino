@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import com.mycompany.bonvino.logica.ControladorPrincipal;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VentanaGenerarReporte extends javax.swing.JFrame {
     
@@ -46,7 +49,7 @@ public class VentanaGenerarReporte extends javax.swing.JFrame {
     }
 
 // Método de manejo del evento de confirmación
-private void solicitarConfirmacionActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+private void solicitarConfirmacionActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                                     
     String fechaDesde = solicitarFechaDesde.getText();
     String fechaHasta = solicitarFechaHasta.getText();
     
@@ -120,7 +123,11 @@ private void solicitarConfirmacionActionPerformed(java.awt.event.ActionEvent evt
         solicitarConfirmacion.setText("CONFIRMAR");
         solicitarConfirmacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                solicitarConfirmacionActionPerformed(evt);
+                try {
+                    solicitarConfirmacionActionPerformed(evt);
+                } catch (IOException ex) {
+                    Logger.getLogger(VentanaGenerarReporte.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
