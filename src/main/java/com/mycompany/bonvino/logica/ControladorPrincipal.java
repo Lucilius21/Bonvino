@@ -65,7 +65,9 @@ public class ControladorPrincipal {
 
     public void calcularPuntajeSommelierEnPeriodo(Vino[] vinosArray, String fechaDesde, String fechaHasta){
         for (Vino vino : vinosArray){
-            ordenarVinos(vino.calcularPuntajeSommelierEnPeriodo(fechaDesde, fechaHasta), vino);
+            float promedio = vino.calcularPuntajeSommelierEnPeriodo(fechaDesde, fechaHasta);
+            if (promedio != -1){
+                ordenarVinos(promedio, vino);};
         }
     }
 

@@ -6,7 +6,7 @@ public class Varietal {
     String descripcion;
     int porcentajeComposicion;
 
-    public Varietal(@JsonProperty("descripcion") String descripcion, 
+    public Varietal(@JsonProperty("descripción") String descripcion, 
             @JsonProperty("porcentajeComposicion") int porcentajeComposicion) {
         this.descripcion = descripcion;
         this.porcentajeComposicion = porcentajeComposicion;

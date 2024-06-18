@@ -20,12 +20,12 @@ public class Vino {
     Bodega bodega;
 
     public Vino(
-            @JsonProperty("anada") int anada,
+            @JsonProperty("añada") int anada,
             @JsonProperty("imagenEtiqueta") String imagenEtiqueta,
             @JsonProperty("nombre") String nombre,
             @JsonProperty("notaDeCataBodega") String notaDeCataBodega,
-            @JsonProperty("precioARS") int precioARS,
-            @JsonProperty("resena") List<Reseña> resena,
+            @JsonProperty("precio") int precioARS,
+            @JsonProperty("reseña") List<Reseña> resena,
             @JsonProperty("varietal") List<Varietal> varietal,
             @JsonProperty("bodega") Bodega bodega
             ){

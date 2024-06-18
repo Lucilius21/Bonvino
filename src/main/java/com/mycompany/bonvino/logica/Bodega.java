@@ -18,7 +18,7 @@ public class Bodega {
     String periodoActualizacion;
     RegionVitivinicola region;
 
-    public Bodega(@JsonProperty("coordenadasUbicacion") float[] coordenadasUbicacion, 
+    public Bodega(@JsonProperty("coordenadasUbicación") float[] coordenadasUbicacion, 
             @JsonProperty("nombre") String nombre, 
             @JsonProperty("descripcion") String descripcion, 
             @JsonProperty("historia") String historia, 

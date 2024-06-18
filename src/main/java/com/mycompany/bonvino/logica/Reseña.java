@@ -14,7 +14,7 @@ public class Reseña {
 
     public Reseña(@JsonProperty("comentario") String comentario, 
             @JsonProperty("esPremium") Boolean esPremium, 
-            @JsonProperty("fechaResena") String fechaResena, 
+            @JsonProperty("fechaReseña") String fechaResena, 
             @JsonProperty("puntaje") int puntaje
             ) {
         this.comentario = comentario;
